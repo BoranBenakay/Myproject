@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
@@ -15,4 +16,10 @@ public class NewBehaviourScript : MonoBehaviour
     {
         
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        transform.position += new Vector3(0, 0, transform.GetChild(0).GetComponent<Renderer>().bounds.size.z);
+             
+    }
+
 }
